@@ -1,10 +1,12 @@
 from flask import Flask
 import os
+import datetime
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello, World!"
+    now = datetime.datetime.now().isoformat()
+    return f"Hello, World! Now: {now}"
 
 
 if __name__ == "__main__":
